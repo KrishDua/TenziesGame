@@ -1,12 +1,67 @@
-# React + Vite
+# Krish's Tenzies Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun and interactive web game inspired by the classic Tenzies dice game — built using **React.js**, styled with **custom CSS**, and enhanced with responsive design and smooth UX transitions.
 
-Currently, two official plugins are available:
+Play, hold, and roll the dice until all dice show the same value. Built with simplicity, performance, and fun in mind.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Play now: [https://krishtenziesgame.vercel.app)](https://krishtenziesgame.vercel.app)
+
+---
+
+## Project Overview
+
+This game allows users to:
+
+- Roll 10 dice until all values match
+- Click to "hold" dice between rolls
+- See visual feedback when dice are held
+- Celebrate with confetti and custom animations on a win
+- Reset the game and play again instantly
+
+---
+
+## Features
+
+- Real-time game logic with React state
+- Random dice roll using `Math.random()`
+- Win detection when all dice are held & matching
+- Custom die component with hover/tap animations
+- Fully responsive and touch-optimized
+- Confetti celebration on win using `react-confetti`
+- Smooth UI transitions with CSS and responsive grid
+
+---
+
+## Technologies Used
+
+### Frontend
+
+- **React.js** – Component-based UI library
+- **nanoid** – For generating unique dice IDs
+- **react-confetti** – Win animation library
+- **Custom CSS** – For styling, transitions, and responsiveness
+
+---
+
+## Folder Structure
+
+/src
+/Components
+Die.jsx # Individual die component
+App.jsx # Game logic and UI layout
+App.css # Full custom styling
+
+
+---
+
+## Author
+
+**Krish Dua**  
+Portfolio: [https://krishdua.vercel.app](https://krishdua.vercel.app)  
+LinkedIn: [https://www.linkedin.com/in/krish-dua-9202a4272/](https://www.linkedin.com/in/krish-dua-9202a4272/)  
+
+---
