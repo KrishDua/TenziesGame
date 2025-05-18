@@ -7,6 +7,10 @@ import {nanoid} from 'nanoid'
 import Confetti from 'react-confetti'
 function App() {
   const  [dice,setDice] = useState(() => generateAllNewDice());
+  const [rollCount,setRollCount] = useState(0);
+  const [time,setTime] = useState(0);
+  const [isRunning,setIsRunning] = useState(false);
+  const timerRef = useRef(null);
   const buttonRef = useRef(null);
 
   function generateAllNewDice(){
@@ -22,7 +26,14 @@ function App() {
   function rollDice(){
     if(gameWon){
       setDice(generateAllNewDice());
+      setRollCount(0);
+      setTime(0);
+      setIsRunning(false);
     }else{
+      if(!isRunning){
+        setIsRunning(true);
+      }
+      setRollCount(prev => prev + 1)
       setDice(oldDice => oldDice.map(die =>{
         return die.isHeld ? die : {...die,value : Math.ceil(Math.random()*6)};
       }))
@@ -31,6 +42,7 @@ function App() {
   useEffect(() => {
     if(gameWon){
       buttonRef.current.focus();
+      setIsRunning(false);
     }
   }
   , [gameWon]);
@@ -42,6 +54,18 @@ function App() {
   const diceElements = dice.map((dieobj, index) => {
       return <Die key={dieobj.id} hold={hold} {...dieobj} />
   })
+  useEffect(()=>{
+   if(isRunning){
+    timerRef.current = setInterval(() => {
+      setTime(prev => prev + 1);
+    }, 1000);
+   }else{
+    clearInterval(timerRef.current);
+   } 
+   return () => {
+    clearInterval(timerRef.current);
+   }
+  },[isRunning])
   return (
     <main>
       {
@@ -60,6 +84,10 @@ function App() {
               Click each die to freeze it <br /> at its current value between rolls.</p>
           </>
         }
+        <div className="instructions">
+        <p><strong>Rolls:</strong> {rollCount}</p>
+        <p><strong>Time:</strong> {time} seconds</p>
+        </div>
       </div>
       <div className="dice-container">
         {diceElements}
