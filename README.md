@@ -8,7 +8,7 @@ Play, hold, and roll the dice until all dice show the same value. Built with sim
 
 ## Live Demo
 
-Play now: [https://krishtenziesgame.vercel.app)](https://krishtenziesgame.vercel.app)
+[Play now](https://krishtenziesgame.vercel.app)
 
 ---
 
@@ -61,7 +61,7 @@ App.css # Full custom styling
 ## Author
 
 **Krish Dua**  
-Portfolio: [https://krishdua.vercel.app](https://krishdua.vercel.app)  
-LinkedIn: [https://www.linkedin.com/in/krish-dua-9202a4272/](https://www.linkedin.com/in/krish-dua-9202a4272/)  
+[Portfolio](https://krishdua.vercel.app)  
+[LinkedIn](https://www.linkedin.com/in/krish-dua-9202a4272/)  
 
 ---
